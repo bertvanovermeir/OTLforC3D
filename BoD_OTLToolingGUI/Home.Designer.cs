@@ -38,7 +38,7 @@
             this.buttonDWG = new System.Windows.Forms.Button();
             this.checkNewDrawing = new System.Windows.Forms.CheckBox();
             this.buttonInject = new System.Windows.Forms.Button();
-            this.checkoverwrite = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -121,9 +121,10 @@
             this.checkNewDrawing.AutoSize = true;
             this.checkNewDrawing.Location = new System.Drawing.Point(174, 131);
             this.checkNewDrawing.Name = "checkNewDrawing";
-            this.checkNewDrawing.Size = new System.Drawing.Size(182, 17);
+            this.checkNewDrawing.Size = new System.Drawing.Size(561, 17);
             this.checkNewDrawing.TabIndex = 14;
-            this.checkNewDrawing.Text = "Create a new drawing file instead";
+            this.checkNewDrawing.Text = "Create a new drawing file on the desktop instead (OTL_template.dwg will be overwr" +
+    "itten if it exists on the desktop)";
             this.checkNewDrawing.UseVisualStyleBackColor = true;
             this.checkNewDrawing.CheckedChanged += new System.EventHandler(this.checkNewDrawingFile);
             // 
@@ -139,22 +140,22 @@
             this.buttonInject.UseVisualStyleBackColor = true;
             this.buttonInject.Click += new System.EventHandler(this.buttonInject_Click);
             // 
-            // checkoverwrite
+            // label3
             // 
-            this.checkoverwrite.AutoSize = true;
-            this.checkoverwrite.Location = new System.Drawing.Point(174, 154);
-            this.checkoverwrite.Name = "checkoverwrite";
-            this.checkoverwrite.Size = new System.Drawing.Size(371, 17);
-            this.checkoverwrite.TabIndex = 16;
-            this.checkoverwrite.Text = "Overwrite OTL class where possible (used classes cannot be overwritten)";
-            this.checkoverwrite.UseVisualStyleBackColor = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 215);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Developed by Bert Van Overmeir for AWV";
             // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 240);
-            this.Controls.Add(this.checkoverwrite);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonInject);
             this.Controls.Add(this.checkNewDrawing);
             this.Controls.Add(this.textBoxDWG);
@@ -169,7 +170,7 @@
             this.MinimizeBox = false;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OTL to C3D by BitsofData";
+            this.Text = "OTL to C3D ALPHA version 0.1";
             this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,7 +188,7 @@
         private System.Windows.Forms.Button buttonDWG;
         private System.Windows.Forms.CheckBox checkNewDrawing;
         private System.Windows.Forms.Button buttonInject;
-        private System.Windows.Forms.CheckBox checkoverwrite;
+        private System.Windows.Forms.Label label3;
     }
 }
 

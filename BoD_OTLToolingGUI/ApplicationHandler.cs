@@ -12,11 +12,11 @@ namespace BoD_OTLToolingGUI
     public static class ApplicationHandler
     {
         public static ApplicationSettings Settings;
-
+        public static string currentversion = "0.1";
         public static void Start()
         {
-            
-
+            if (!CheckVersion())
+                MessageBox.Show("A new version is available, it is recommended to update.", "New version available", MessageBoxButtons.OK, MessageBoxIcon.Information);
             // import data from settings.dat
             Settings = new ApplicationSettings();
             bool success = Settings.Init("settings.dat");
@@ -31,6 +31,10 @@ namespace BoD_OTLToolingGUI
 
         private static void OpenGUI()
         {
+            // check firstrun
+            if (Settings.ReadSetting("FIRSTRUN").ToLower().Equals("true"))
+                firstrun();
+
             // test for C3D availability
 
             string PFpath = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\";
@@ -39,6 +43,40 @@ namespace BoD_OTLToolingGUI
             else
                 MessageBox.Show("Civil3D installation not found (supported versions " + Settings.ReadSetting("SUPPORTED_ACAD") +"", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
+        }
+
+        public static bool CheckVersion()
+        {
+            var downloadpath = System.IO.Path.GetTempPath() + "otlappversie\\";
+            // create the folder if it does not exist
+            Directory.CreateDirectory(downloadpath);
+            string newestversion = "";
+            // download the TTL file
+            try
+            {
+                using (var client = new System.Net.WebClient())
+                {
+                    client.DownloadFile("https://raw.githubusercontent.com/bertvanovermeir/OTL/master/OTLWizard/Data/version.dat", downloadpath + "version.dat");
+                }
+                string[] lines = File.ReadAllLines(downloadpath + "version.dat", System.Text.Encoding.UTF8);
+                foreach (string item in lines)
+                {
+                    newestversion = item;
+                }
+                if (newestversion.Equals(currentversion))
+                    return true;
+                else
+                    return false;
+            }
+            catch
+            {
+                return true;
+            }
+        }
+        private static void firstrun()
+        {
+            Firstrun first = new Firstrun();
+            first.ShowDialog();
         }
 
         public static async Task<bool> RunScript()
@@ -59,12 +97,27 @@ namespace BoD_OTLToolingGUI
 
         public static void ExecAcad()
         {
+            // adapt the path to the script for current user
             EditScriptPath();
+            // check if new file is needed
+            EditDWGPath();
+
             string strCmdText;
             string strPathConsole = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\" + Settings.ReadSetting("DIR_ACAD") + "\\accoreconsole.exe";
             string strPathScript = Application.StartupPath;
             strCmdText = " /i \"" + Settings.ReadSetting("DWG_PATH") + "\" /s \" " + strPathScript + "\\scripts\\acad.scr\" ";
             System.Diagnostics.Process.Start(strPathConsole, strCmdText);
+        }
+
+        private static void EditDWGPath()
+        {
+            if(Settings.ReadSetting("DWG_NEWFILE").ToLower().Equals("true"))
+            {
+                string fileToCopy = Application.StartupPath + "\\scripts\\otl_template_base.dwg";
+                string destinationDirectory = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\otl_template.dwg";
+                Settings.WriteSetting("DWG_PATH", Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\\otl_template.dwg");
+                File.Copy(fileToCopy, destinationDirectory,true);
+            }
         }
 
         private static void EditScriptPath()

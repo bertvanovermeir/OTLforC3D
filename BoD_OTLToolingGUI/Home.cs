@@ -100,7 +100,6 @@ namespace BoD_OTLToolingGUI
         {
 
             ApplicationHandler.Settings.WriteSetting("DWG_NEWFILE", checkNewDrawing.Checked.ToString());
-            ApplicationHandler.Settings.WriteSetting("DWG_OVERWRITE", checkoverwrite.Checked.ToString());
             ApplicationHandler.Settings.WriteSetting("DWG_PATH", textBoxDWG.Text);
             ApplicationHandler.Settings.WriteSetting("SQL_PATH", textBoxSubset.Text);
 

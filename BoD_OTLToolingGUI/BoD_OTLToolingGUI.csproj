@@ -74,6 +74,12 @@
   <ItemGroup>
     <Compile Include="ApplicationHandler.cs" />
     <Compile Include="ApplicationSettings.cs" />
+    <Compile Include="Firstrun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Firstrun.Designer.cs">
+      <DependentUpon>Firstrun.cs</DependentUpon>
+    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Firstrun.resx">
+      <DependentUpon>Firstrun.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +111,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -119,12 +129,25 @@
     <None Include="scripts\acad_base.scr">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="scripts\otl_template_base.dwg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="settings.dat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="version.dat" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\tip1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\tip2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\tip3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
