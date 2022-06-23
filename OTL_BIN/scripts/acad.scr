@@ -1,0 +1,7 @@
+FILEDIA 0
+;Loading the .Net module
+(command "_.Netload" "C:\Users\BertVanOvermeir\source\repos\OTLToolbox\OTL_BIN\BoD_OTLToolBox.dll")
+(command "otlimportdb")
+QSAVE
+FILEDIA 1
+CLOSE

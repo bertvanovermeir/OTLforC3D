@@ -1,0 +1,7 @@
+﻿FILEDIA 0
+;Loading the .Net module
+(command "_.Netload" "[PATH]")
+(command "otlimportdb")
+QSAVE
+FILEDIA 1
+CLOSE

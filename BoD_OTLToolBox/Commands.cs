@@ -20,5 +20,15 @@ namespace BoD_OTLToolBox
         {
             ActionHandler.UI_Import_OTLDB();
         }
+        [CommandMethod("OTLUPDATELISTS")]
+        public void OTLUpdateLists()
+        {
+            // ActionHandler.UI_Import_OTLDB();
+        }
+        [CommandMethod("OTLUPDATEDB")]
+        public void OTLUpdateNode()
+        {
+            // ActionHandler.UI_Import_OTLDB();
+        }
     }
 }

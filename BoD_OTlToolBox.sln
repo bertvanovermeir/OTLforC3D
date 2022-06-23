@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30503.244
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoD_OTLTooling", "BoD_OTLToolBox\BoD_OTLTooling.csproj", "{71E2B4BA-F211-4E31-87D1-9A8FDC9B730B}"
 EndProject
@@ -17,7 +17,10 @@ Project("{911E67C6-3D85-4FCE-B560-20A9C3E3FF48}") = "acad", "..\..\..\..\..\Prog
 		UseLegacyDebugEngines = No
 		LaunchSQLEngine = No
 		AttachLaunchAction = No
+		IORedirection = Auto
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoD_OTLToolingGUI", "BoD_OTLToolingGUI\BoD_OTLToolingGUI.csproj", "{50F46545-9699-4219-99F9-DC7007F9581A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +42,14 @@ Global
 		{AEA4B569-C671-42BD-89C1-AC5E61CDCF61}.Debug|x64.ActiveCfg = Release|x64
 		{AEA4B569-C671-42BD-89C1-AC5E61CDCF61}.Release|Any CPU.ActiveCfg = Release|x64
 		{AEA4B569-C671-42BD-89C1-AC5E61CDCF61}.Release|x64.ActiveCfg = Release|x64
+		{50F46545-9699-4219-99F9-DC7007F9581A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F46545-9699-4219-99F9-DC7007F9581A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F46545-9699-4219-99F9-DC7007F9581A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{50F46545-9699-4219-99F9-DC7007F9581A}.Debug|x64.Build.0 = Debug|Any CPU
+		{50F46545-9699-4219-99F9-DC7007F9581A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F46545-9699-4219-99F9-DC7007F9581A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F46545-9699-4219-99F9-DC7007F9581A}.Release|x64.ActiveCfg = Release|Any CPU
+		{50F46545-9699-4219-99F9-DC7007F9581A}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
