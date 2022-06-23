@@ -25,7 +25,7 @@ namespace BoD_OTLToolBox
             string sqlpath = DataHandler.settings.ReadSetting("SQL_PATH");
             string ttlpath = DataHandler.settings.ReadSetting("TTL_PATH");
 
-            if (File.Exists(sqlpath) && Directory.Exists(ttlpath) && !IsFileLocked(sqlpath))
+            if (File.Exists(sqlpath) && !IsFileLocked(sqlpath))
             {
                 Import_OTLDB();
             }
