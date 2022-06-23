@@ -39,6 +39,8 @@
             this.checkNewDrawing = new System.Windows.Forms.CheckBox();
             this.buttonInject = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.accoreconsoleBox = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -150,11 +152,34 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Developed by Bert Van Overmeir for AWV";
             // 
+            // accoreconsoleBox
+            // 
+            this.accoreconsoleBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.accoreconsoleBox.Location = new System.Drawing.Point(174, 161);
+            this.accoreconsoleBox.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.accoreconsoleBox.Name = "accoreconsoleBox";
+            this.accoreconsoleBox.Size = new System.Drawing.Size(614, 20);
+            this.accoreconsoleBox.TabIndex = 17;
+            this.accoreconsoleBox.TextChanged += new System.EventHandler(this.accoreconsoleBox_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 164);
+            this.label4.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(125, 13);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Civil3D Installation Folder";
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 240);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.accoreconsoleBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonInject);
             this.Controls.Add(this.checkNewDrawing);
@@ -189,6 +214,8 @@
         private System.Windows.Forms.CheckBox checkNewDrawing;
         private System.Windows.Forms.Button buttonInject;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox accoreconsoleBox;
+        private System.Windows.Forms.Label label4;
     }
 }
 

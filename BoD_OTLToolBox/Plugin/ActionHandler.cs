@@ -1,6 +1,7 @@
 ﻿using BoD_OTLToolBox.Plugin;
 using System.IO;
 using BoD_OTLToolBox.OTLObjects;
+using System.Threading;
 
 namespace BoD_OTLToolBox
 {
@@ -31,8 +32,9 @@ namespace BoD_OTLToolBox
             }
             else
             {
-                // files not found
-            }
+                DataHandler.AutocadEditor.WriteMessage("\nSQL File is locked or invalid. Please try again.");
+            }           
+            Thread.Sleep(5000);
         }
 
 

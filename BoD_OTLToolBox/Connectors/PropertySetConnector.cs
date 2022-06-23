@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Collections.Specialized;
 using BoD_OTLToolBox.OTLObjects;
+using BoD_OTLToolBox.Plugin;
 
 namespace BoD_OTLToolBox
 {
@@ -278,6 +279,7 @@ namespace BoD_OTLToolBox
         // create a new property set in propertysetdefine windows
         public void CreatePropertySetDefinition(OTL_ObjectType otlobject)
         {
+            DataHandler.AutocadEditor.WriteMessage("\n>Object: " + otlobject.Name);
             TransactionManager tm = acadDb.TransactionManager;
 
             // create new property set definition
@@ -300,12 +302,13 @@ namespace BoD_OTLToolBox
             // iterate over properties
             foreach (OTL_Parameter parameter in otlobject.GetParameters())
             {
+                DataHandler.AutocadEditor.WriteMessage("\n>>parameter: " + parameter.dotNotationFullName);
                 try
                 {
                     propSet.Definitions.Add(CreateProperty(parameter));
                 } catch
                 {
-                    // duplicate parameter exception
+                    DataHandler.AutocadEditor.WriteMessage("\n>>parameter: " + parameter.dotNotationFullName + " | Failed! Parameter already exists!");
                 }
                 
             }
@@ -317,7 +320,7 @@ namespace BoD_OTLToolBox
                 DictionaryPropertySetDefinitions PropDefs = new DictionaryPropertySetDefinitions(acadDb);    
                 if(PropDefs.Has(otlobject.OTLName,trans))
                 {
-                    // cannot create!
+                    DataHandler.AutocadEditor.WriteMessage("\n>Object: " + otlobject.Name + " | Failed! Class already Exists!");
                 } else
                 {
                     PropDefs.AddNewRecord(otlobject.OTLName, propSet);

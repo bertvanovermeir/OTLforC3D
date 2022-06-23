@@ -1,9 +1,8 @@
 ﻿using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
-using Autodesk.AutoCAD.Geometry;
+using Autodesk.AutoCAD.EditorInput;
 using BoD_OTLToolBox.Connectors;
 using BoD_OTLToolBox.OTLObjects;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
@@ -16,6 +15,8 @@ namespace BoD_OTLToolBox.Plugin
         // Autocad Application Handles     
 
         public static Database AutocadDatabase { get; set; }
+        public static Editor AutocadEditor { get; set; }
+        public static Document AutocadDocument { get; set; }
 
         // External Connector Handles    
         public static SQLiteConnector SQLiteConnector;
@@ -32,6 +33,8 @@ namespace BoD_OTLToolBox.Plugin
             // init application settings
             string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\settings.dat";
             settings.Init(path);
+            AutocadDocument = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
+            AutocadEditor = AutocadDocument.Editor;            
             Refresh_DB();
             OTL_List_ObjectTypes = new List<OTL_ObjectType>();
         }
@@ -52,6 +55,7 @@ namespace BoD_OTLToolBox.Plugin
         /// </summary>
         public static void Import_OTLDB()
         {
+            AutocadEditor.WriteMessage("\nSuccesfully started OTL injection!");
             Refresh_DB();
             // reset the lists
             OTL_List_ObjectTypes = new List<OTL_ObjectType>();
@@ -66,6 +70,9 @@ namespace BoD_OTLToolBox.Plugin
             {
                 conn.CreatePropertySetDefinition(item);
             }
+            DataHandler.AutocadEditor.WriteMessage("\nWindow closing in 5 seconds. Click inside window to pause.");
+            DataHandler.AutocadEditor.WriteMessage("\nEND");
+
         }
 
         /// <summary>

@@ -36,12 +36,16 @@ namespace BoD_OTLToolingGUI
 
             // test for C3D availability
 
-            string PFpath = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\";
+            string PFpath = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\Autodesk";
             if (Directory.Exists(PFpath + Settings.ReadSetting("DIR_ACAD")) && Directory.Exists(PFpath + Settings.ReadSetting("DIR_C3D")))
-                Application.Run(new Home());
+            {
+                Settings.WriteSetting("DIR_INSTALL", PFpath);
+            }                
             else
-                MessageBox.Show("Civil3D installation not found (supported versions " + Settings.ReadSetting("SUPPORTED_ACAD") +"", "Fatal Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                {
+                    MessageBox.Show("Civil3D installation not found (supported versions " + Settings.ReadSetting("SUPPORTED_ACAD") + "", "Minor Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            Application.Run(new Home());
         }
 
         private static void firstrun()
@@ -74,7 +78,7 @@ namespace BoD_OTLToolingGUI
             EditDWGPath();
 
             string strCmdText;
-            string strPathConsole = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + "\\" + Settings.ReadSetting("DIR_ACAD") + "\\accoreconsole.exe";
+            string strPathConsole = Settings.ReadSetting("DIR_INSTALL") + Settings.ReadSetting("DIR_ACAD") + "\\accoreconsole.exe";
             string strPathScript = Application.StartupPath;
             strCmdText = " /i \"" + Settings.ReadSetting("DWG_PATH") + "\" /s \" " + strPathScript + "\\scripts\\acad.scr\" ";
             System.Diagnostics.Process.Start(strPathConsole, strCmdText);

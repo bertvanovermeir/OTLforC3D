@@ -7,8 +7,10 @@ TTL_PATH,C:\Users\BertVanOvermeir\Downloads\OSLOthema-wegenenverkeer-test\OSLOth
 SQL_PATH,C:\Users\BertVanOvermeir\Downloads\Camera30052022.db
 DWG_PATH,xxx
 PERSIST_PATHS,True
-DIR_ACAD,Autodesk\AutoCAD 2022
-DIR_C3D,Autodesk\AutoCAD 2022\C3D
+DIR_ACAD,\AutoCAD 2022
+DIR_C3D,\AutoCAD 2022\C3D
+DIR_INSTALL,Could not be found - Enter Here (ending in 'Autodesk') - example: c:\program files\Autodesk
+DIR_INSTALL_BCKP,Could not be found - Enter Here (ending in 'Autodesk') - example: c:\program files\Autodesk
 SUPPORTED_ACAD,2022
 DWG_NEWFILE,TRUE
 FIRSTRUN,TRUE

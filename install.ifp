@@ -75,6 +75,9 @@ Execdlls = 0
 [Languages]
 1
 [Files/Dirs]
+C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\acad.err
+189 Byte
+err
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\accoremgd.dll
 908.1 KB
 dll
@@ -103,16 +106,16 @@ C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\Aec
 411.6 KB
 dll
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\BoD_OTLToolBox.dll
-44.5 KB
+45.5 KB
 dll
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\BoD_OTLToolBox.dll.config
 3.2 KB
 config
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\BoD_OTLToolBox.pdb
-75.5 KB
+77.5 KB
 pdb
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\BoD_OTLToolingGUI.exe
-623.5 KB
+624.5 KB
 exe
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\BoD_OTLToolingGUI.exe.config
 565 Byte
@@ -169,7 +172,7 @@ C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\Pre
 2 MB
 dll
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\settings.dat
-528 Byte
+728 Byte
 dat
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\SQLitePCLRaw.core.dll
 49.5 KB
@@ -270,19 +273,19 @@ dll
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\en-US\
 N/A
 [Folder]
-C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\scripts\
-N/A
-[Folder]
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\x86\
 N/A
 [Folder]
 C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\x64\
 N/A
 [Folder]
+C:\Users\BertVanOvermeir\source\repos\OTLToolbox\BoD_OTLToolingGUI\bin\Debug\scripts\
+N/A
+[Folder]
 [Licence_Begin]
-311
+307
 {\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Arial;}}
-\viewkind4\uc1\pard\cf0\fs20 For non-commercial use only. May not be distributed or sold.\par
+\viewkind4\uc1\pard\fs20 For non-commercial use only. May not be distributed or sold.\par
 \par
 ---\par
 \par

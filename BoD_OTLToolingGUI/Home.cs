@@ -23,6 +23,7 @@ namespace BoD_OTLToolingGUI
 
         private void Home_Load(object sender, EventArgs e)
         {
+            accoreconsoleBox.Text = ApplicationHandler.Settings.ReadSetting("DIR_INSTALL");
 
         }
 
@@ -102,8 +103,15 @@ namespace BoD_OTLToolingGUI
             ApplicationHandler.Settings.WriteSetting("DWG_NEWFILE", checkNewDrawing.Checked.ToString());
             ApplicationHandler.Settings.WriteSetting("DWG_PATH", textBoxDWG.Text);
             ApplicationHandler.Settings.WriteSetting("SQL_PATH", textBoxSubset.Text);
+            ApplicationHandler.Settings.WriteSetting("DIR_INSTALL", accoreconsoleBox.Text);
 
             await ApplicationHandler.RunScript();
+        }
+
+        private void accoreconsoleBox_TextChanged(object sender, EventArgs e)
+        {
+            ApplicationHandler.Settings.WriteSetting("DIR_INSTALL", accoreconsoleBox.Text);
+
         }
     }
 }
